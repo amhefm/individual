@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int findSmallest(const vector<int>& arr) {
+    int smallest = arr[0];
+
+    for (int num : arr) {
+        if (num < smallest) {
+            smallest = num;
+        }
+    }
+    return smallest;
+}
+
+int main() {
+    vector<int> array = {5, 2, 9, 1, 7};
+    cout << "Smallest Number: " << findSmallest(array) << endl;
+    return 0;
+}
