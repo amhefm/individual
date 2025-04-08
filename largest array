@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+#include <limits.h>
+using namespace std;
+
+pair<int, int> findSecondAndThirdLargest(const vector<int>& arr) {
+    if (arr.size() < 3) {
+        throw invalid_argument("Array must have at least three elements!");
+    }
+
+    int first = INT_MIN, second = INT_MIN, third = INT_MIN;
+
+    for (int num : arr) {
+        if (num > first) {
+            third = second;
+            second = first;
+            first = num;
+        } else if (num > second && num != first) {
+            third = second;
+            second = num;
+        } else if (num > third && num != second && num != first) {
+            third = num;
+        }
+    }
+    return {second, third};
+}
+
+int main() {
+    vector<int> array = {5, 8, 12, 3, 10};
+    try {
+        auto [second, third] = findSecondAndThirdLargest(array);
+        cout << "Second Largest: " << second << endl;
+        cout << "Third Largest: " << third << endl;
+    } catch (const invalid_argument& e) {
+        cout << e.what() << endl;
+    }
+    return 0;
+}
