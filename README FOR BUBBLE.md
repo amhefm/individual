@@ -1,15 +1,42 @@
 
-Description
-This program demonstrates the Bubble Sort algorithm in C++. It sorts an array of integers in ascending order using the Bubble Sort technique and measures the time taken to sort the array.
+Bubble Sort in C++
+This project demonstrates a basic implementation of the Bubble Sort algorithm in C++. It also measures the time taken to sort a small array using the clock() function from the C++ Standard Library.
 
-Time Complexity
-Best Case: O(n) when the array is already sorted.
+📋 Description
+The code performs the following steps:
 
-Worst Case: O(n²) when the array is in reverse order.
+1 Defines a vector of integers.
 
-Features
-Sorts a list of integers in ascending order.
+2 Sorts the vector using the Bubble Sort algorithm.
 
-Measures and outputs the time taken for sorting.
+3 Measures and prints the time taken to sort the array.
 
-Prints the sorted array for verification.
+🧾 Code Breakdown
+- bubbleSort(std::vector<int>& arr): A function that implements the Bubble Sort algorithm.
+
+ -clock_t start = clock();: Starts timing the sort.
+
+- clock_t end = clock();: Ends timing after the sort.
+
+- double time_taken = double(end - start) / CLOCKS_PER_SEC;: Calculates the duration.
+
+🛠️ Requirements
+- A C++ compiler (e.g., g++, clang++)
+
+- C++11 or later
+
+🚀 How to Compile and Run
+1 Save the code in a file, e.g., bubble_sort.cpp.
+
+2 Open a terminal and run:
+📈 Sample Output
+css
+Copy
+Edit
+Bubble Sort Time: 0.000012 seconds
+(Note: The exact time may vary depending on your system.)
+
+📚 Notes
+Bubble Sort is not efficient for large datasets (O(n²) time complexity).
+
+This implementation is meant for educational purposes.
