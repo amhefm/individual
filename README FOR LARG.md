@@ -1,67 +1,67 @@
-Find Second and Third Largest Elements in an Array
-Overview
-This program efficiently finds the second largest and third largest distinct elements in an array of integers. If the array contains fewer than three distinct elements, it throws an exception. The program operates in linear time, making it optimal for large arrays.
+  Description
+This C++ program efficiently finds the second and third largest elements in an array of integers. The implementation handles edge cases and provides clear error messages when the input array doesn't meet requirements.
 
-Features
-Returns the second largest and third largest distinct elements from the given array.
+  Features
+Finds second and third largest elements in a single pass (O(n) time complexity)
 
-Handles arrays with fewer than three elements by throwing a descriptive exception.
+Uses constant space (O(1) space complexity)
 
-Optimized to work in O(n) time complexity, where n is the size of the array.
+Includes proper error handling for invalid input sizes
 
-Problem Statement
-Given an array of integers, the task is to find:
+Clean, modern C++ implementation using pair and structured bindings
 
-The second largest distinct element in the array.
+  Algorithm Overview
+The algorithm works by maintaining three variables to track the largest, second largest, and third largest elements as it iterates through the array:
 
-The third largest distinct element in the array.
+Initialize three variables to minimum integer values
 
-If the array contains fewer than three distinct elements, the program will raise an error.
+For each number in the array:
 
-Requirements
-C++11 or later: This code uses structured bindings (auto [second, third]) introduced in C++17 for cleaner variable unpacking.
+If the number is greater than the current largest, update all three values
 
-A C++ compiler: e.g., g++, clang++.
+Else if it's greater than the second largest (and not equal to largest), update second and third
 
-Input
-The program expects an array of integers, where the array must contain at least three distinct elements.
+Else if it's greater than the third largest (and not equal to first or second), update third
 
-Code Explanation
-1. findSecondAndThirdLargest Function
-This function takes a vector of integers as input and returns a pair containing:
+Return the second and third largest values
 
-The second largest distinct element
+  Requirements
+C++17 or later (for structured bindings)
 
-The third largest distinct element
+Standard Template Library (STL)
 
-Key steps:
-Edge Case Check: It first checks if the array has fewer than three elements and throws an exception if true.
+  Usage
+Compile the code with a C++17 compatible compiler:
 
-Variable Initialization: The function initializes three variables first, second, and third to INT_MIN to represent the largest, second largest, and third largest distinct elements.
+bash
+g++ -std=c++17 find_largest.cpp -o find_largest
+Run the executable:
 
-Iterative Comparison: As it iterates over the array, it compares each number with first, second, and third:
+bash
+./find_largest
+Example Output
+For the input array {5, 8, 12, 3, 10}:
 
-If the current number is larger than first, it updates all three values.
+Second Largest: 10
+Third Largest: 8
+Edge Cases Handled
+Arrays with fewer than 3 elements (throws exception)
 
-If it is between first and second, it updates second and third.
+Arrays with duplicate values (properly skips duplicates)
 
-If it is between second and third, it updates third.
+Arrays with negative numbers (works with INT_MIN initialization)
 
-2. Main Function
-The main function initializes a test array, calls findSecondAndThirdLargest(), and prints the results. If the array is invalid, it catches the exception and prints the error message.
-Compilation and Execution
-1. Compile the Code
-To compile the code, use a C++ compiler like g++. If the file is named find_largest_elements.cpp, run the following command:
-Run the Executable
-Once compiled, run the executable to see the results:
-Contributing
-We welcome contributions to improve this program! If you have ideas for enhancements, bug fixes, or optimizations, feel free to open an issue or create a pull request.
+  Time Complexity
+O(n) - Single pass through the array
 
-How to Contribute:
-Fork the repository.
+Each element requires at most 3 comparisons
 
-Create a new branch for your changes.
+ Space Complexity
+O(1) - Uses only a constant amount of additional space
 
-Make your changes and commit them.
+ Possible Improvements
+Could be extended to find the k-th largest elements
 
-Push to your fork and create a pull request
+Could add validation for empty arrays
+
+Could be templatized to work with different numeric types
