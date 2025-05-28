@@ -1,4 +1,4 @@
-Insertion Sort Implementation in C++
+ Insertion Sort Implementation in C++
      Description
 This repository contains a C++ implementation of the Insertion Sort algorithm, along with basic timing functionality to measure its performance on a small dataset.
 
