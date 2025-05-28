@@ -1,4 +1,4 @@
-  Description
+   Description
 This C++ program efficiently finds the second and third largest elements in an array of integers. The implementation handles edge cases and provides clear error messages when the input array doesn't meet requirements.
 
   Features
