@@ -1,4 +1,4 @@
-Description
+ Description
 This C++ program efficiently finds the smallest element in an array of integers. The implementation is clean, straightforward, and demonstrates fundamental array traversal techniques.
 
 Features
